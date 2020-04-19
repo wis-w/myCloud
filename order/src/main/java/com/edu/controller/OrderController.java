@@ -2,6 +2,7 @@ package com.edu.controller;
 
 import com.edu.domain.Order;
 import com.edu.service.OrderService;
+import com.edu.service.StorageService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,10 +20,14 @@ public class OrderController {
     @Resource
     private OrderService orderService;
 
+    @Resource
+    StorageService storageService;
+
     @GetMapping("hello")
     public String hello(){
-        Order order = new Order(1L, 1L, 1L, 1, new BigDecimal(0), 1);
-        orderService.create(order);
+//        Order order = new Order(1L, 1L, 1L, 1, new BigDecimal(0), 1);
+//        orderService.create(order);
+        storageService.decrease(1L,1);
         return "hello";
     }
 

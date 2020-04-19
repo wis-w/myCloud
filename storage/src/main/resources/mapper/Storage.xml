@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.edu.dao.StorageDao">
+    <resultMap id="resultMap" type="com.edu.mapper.Storage">
+        <result column="id" property="id" jdbcType="BIGINT"></result>
+        <result column="product_id" property="productId" jdbcType="BIGINT"></result>
+        <result column="total" property="total" jdbcType="BIGINT"></result>
+        <result column="used" property="used" jdbcType="BIGINT"></result>
+        <result column="residue" property="residue" jdbcType="BIGINT"></result>
+    </resultMap>
+    <update id="decrease">
+       update t_storage
+        set used = used + #{count},residue = residue - #{count}
+        where  product_id= #{productId};
+    </update>
+</mapper>

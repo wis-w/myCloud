@@ -10,6 +10,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>order</module>
+        <module>storage</module>
     </modules>
 
     <!--统一版本控制-->

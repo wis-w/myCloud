@@ -1,0 +1,24 @@
+server:
+  port: 8001
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+  datasource:
+    # 当前数据源操作类型
+    type: com.alibaba.druid.pool.DruidDataSource
+    # mysql驱动类
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/seata_storage?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT%2B8
+    username: root
+    password: root1234
+  application:
+    name: storage-service
+
+mybatis:
+  mapperLocations: classpath*:mapper/*.xml
+
+logging:
+  level:
+    com.edu.mapper: debug

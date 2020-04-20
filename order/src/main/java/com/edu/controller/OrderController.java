@@ -31,7 +31,7 @@ public class OrderController {
     public String hello(){
 //        Order order = new Order(1L, 1L, 1L, 1, new BigDecimal(0), 1);
 //        orderService.create(order);
-        storageService.decrease(1L,1);
+//        storageService.decrease(1L,1);
         accountService.decrease(1L, new BigDecimal(1));
         return "hello";
     }

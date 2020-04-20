@@ -12,6 +12,7 @@
         <module>order</module>
         <module>storage</module>
         <module>api_test</module>
+        <module>account</module>
     </modules>
 
     <!--统一版本控制-->
